@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Logika Dasar JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Dashboard Logika Dasar JS</h1>
+            <p>Pilih menu di bawah ini untuk memulai pembelajaran logika</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item" onclick="prosesMenu('1')">
+                <div class="menu-icon">📅</div>
+                <div class="menu-title">1. Umur</div>
+            </div>
+            <div class="menu-item" onclick="prosesMenu('2')">
+                <div class="menu-icon">➕➖</div>
+                <div class="menu-title">2. Positif / Negatif</div>
+            </div>
+            <div class="menu-item" onclick="prosesMenu('3')">
+                <div class="menu-icon">📊</div>
+                <div class="menu-title">3. Angka Besar / Kecil</div>
+            </div>
+            <div class="menu-item" onclick="prosesMenu('4')">
+                <div class="menu-icon">⭐</div>
+                <div class="menu-title">4. Nilai Predikat</div>
+            </div>
+            <div class="menu-item" onclick="prosesMenu('5')">
+                <div class="menu-icon">🏆</div>
+                <div class="menu-title">5. Challenge Project</div>
+            </div>
+        </div>
+
+        <!-- Form Modal -->
+        <div id="modalOverlay" class="modal-overlay" onclick="closeForm()"></div>
+        <div id="formModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeForm()">&times;</span>
+                
+                <!-- Form 1: Umur -->
+                <div id="form1" class="form-section">
+                    <h2>Cek Kecukupan Umur</h2>
+                    <input type="number" id="umur" placeholder="Masukkan Umur Anda" min="0">
+                    <button onclick="cekUmur()">Cek Umur</button>
+                    <div id="hasil1" class="hasil-section"></div>
+                </div>
+
+                <!-- Form 2: Positif/Negatif -->
+                <div id="form2" class="form-section">
+                    <h2>Cek Bilangan Positif atau Negatif</h2>
+                    <input type="number" id="angka" placeholder="Masukkan Angka">
+                    <button onclick="cekBilangan()">Cek Bilangan</button>
+                    <div id="hasil2" class="hasil-section"></div>
+                </div>
+
+                <!-- Form 3: Angka Besar/Kecil -->
+                <div id="form3" class="form-section">
+                    <h2>Bandingkan Dua Angka</h2>
+                    <input type="number" id="angka1" placeholder="Angka 1">
+                    <input type="number" id="angka2" placeholder="Angka 2">
+                    <button onclick="bandingkanAngka()">Bandingkan</button>
+                    <div id="hasil3" class="hasil-section"></div>
+                </div>
+
+                <!-- Form 4: Nilai Predikat -->
+                <div id="form4" class="form-section">
+                    <h2>Cek Nilai Predikat</h2>
+                    <input type="number" id="nilai" placeholder="Masukkan Nilai (0-100)" min="0" max="100">
+                    <button onclick="cekPredikat()">Cek Predikat</button>
+                    <div id="hasil4" class="hasil-section"></div>
+                </div>
+
+                <!-- Form 5: Challenge Project -->
+                <div id="form5" class="form-section">
+                    <h2>Penilaian Siswa</h2>
+                    <input type="text" id="nama" placeholder="Masukkan Nama Siswa">
+                    <input type="text" id="kelas" placeholder="Masukkan Kelas">
+                    <input type="number" id="tugas" placeholder="Masukkan Nilai Tugas (0-100)" min="0" max="100">
+                    <input type="number" id="uts" placeholder="Masukkan Nilai UTS (0-100)" min="0" max="100">
+                    <input type="number" id="uas" placeholder="Masukkan Nilai UAS (0-100)" min="0" max="100">
+                    <button onclick="hitungNilaiAkhir()">Hitung Nilai Akhir</button>
+                    <div id="hasil5" class="hasil-section"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
